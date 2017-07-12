@@ -1,6 +1,3 @@
-# immutability-helper-extensions
-
-
 ## What
 
 Additional functions for the [`immutability-helper`](https://github.com/kolodny/immutability-helper) tool.
