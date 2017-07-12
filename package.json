@@ -4,5 +4,14 @@
   "main": "index.js",
   "repository": "https://github.com/uqee/immutability-helper-extensions.git",
   "author": "Denis Zhbankov",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "babel-preset-es2015": "^6.24.1",
+    "immutability-helper": "^2.3.0",
+    "jest": "^20.0.4"
+  }
 }
