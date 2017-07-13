@@ -8,7 +8,7 @@ Additional functions for the [`immutability-helper`](https://github.com/kolodny/
 1. Install
 
 ```bash
-yarn add @uqee/immutability-helper-extensions
+yarn add @uqee/immutability-helper-x
 ```
 
 2. Test
@@ -25,7 +25,7 @@ import {
   arrayDelete,
   arrayPushUnique,
   objectDelete,
-} from '@uqee/immutability-helper-extensions';
+} from '@uqee/immutability-helper-x';
 
 update.extend('$pop', arrayDelete);
 update.extend('$pushuniq', arrayPushUnique);
