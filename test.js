@@ -5,20 +5,51 @@ update.extend('$pop', src.arrayDelete);
 update.extend('$pushuniq', src.arrayPushUnique);
 update.extend('$del', src.objectDelete);
 
-test('$pop', () => {
-  const a = update([1, 2, 3], { $pop: [1, 3] });
-  const b = [2];
-  expect(a).toEqual(b);
+
+describe('$pop', () => {
+
+  test('modified', () => {
+    const a = update([1, 2, 3], { $pop: [1, 3] });
+    const b = [2];
+    expect(a).toEqual(b);
+  });
+
+  test('not modified', () => {
+    const data = [1, 2, 3];
+    const a = update(data, { $pop: [4, 5] });
+    const b = data;
+    expect(a).toBe(b);
+  });
 });
 
-test('$pushuniq', () => {
-  const a = update([1, 2, 3], { $pushuniq: [2, 3, 4] });
-  const b = [1, 2, 3, 4];
-  expect(a).toEqual(b);
+describe('$pushuniq', () => {
+
+  test('modified', () => {
+    const a = update([1, 2, 3], { $pushuniq: [2, 3, 4] });
+    const b = [1, 2, 3, 4];
+    expect(a).toEqual(b);
+  });
+
+  test('not modified', () => {
+    const data = [1, 2, 3];
+    const a = update(data, { $pushuniq: [1, 2] });
+    const b = data;
+    expect(a).toBe(b);
+  });
 });
 
-test('$del', () => {
-  const a = update({ foo: 1, bar: 2 }, { $del: ['bar', 'baz'] });
-  const b = { foo: 1 };
-  expect(a).toEqual(b);
+describe('$del', () => {
+
+  test('modified', () => {
+    const a = update({ foo: 1, bar: 2 }, { $del: ['bar', 'baz'] });
+    const b = { foo: 1 };
+    expect(a).toEqual(b);
+  });
+
+  test('not modified', () => {
+    const data = { foo: 1, bar: 2 };
+    const a = update(data, { $del: ['baz'] });
+    const b = data;
+    expect(a).toBe(b);
+  });
 });

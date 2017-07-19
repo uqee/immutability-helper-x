@@ -8,9 +8,11 @@
 export default function objectDelete(keys, object) {
   if (!Array.isArray(keys)) keys = [keys];
   if (object === null || typeof object !== 'object') return object;
-  else {
-    const result = Object.assign({}, object);
-    keys.forEach(key => delete result[key]);
-    return result;
-  }
+
+  // modify
+  const result = Object.assign({}, object);
+  keys.forEach(key => delete result[key]);
+
+  // return initial if not modified
+  return Object.keys(result).length === Object.keys(object).length ? object : result;
 }

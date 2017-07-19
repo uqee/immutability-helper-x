@@ -8,5 +8,10 @@
 export default function arrayDelete(items, array) {
   if (!Array.isArray(items)) items = [items];
   if (!array || !Array.isArray(array)) return array;
-  else return array.filter(item => !~items.indexOf(item));
+
+  // modify
+  const result = array.filter(item => !~items.indexOf(item));
+
+  // return initial if not modified
+  return result.length === array.length ? array : result;
 }
