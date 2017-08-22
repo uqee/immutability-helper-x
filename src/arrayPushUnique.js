@@ -11,7 +11,11 @@ export default function arrayPushUnique(items, array) {
 
   // modify
   const result = [].concat(array);
-  items.forEach(item => !~result.indexOf(item) && result.push(item));
+  items.forEach(function(item) {
+    if (result.indexOf(item) === -1) {
+      result.push(item);
+    }
+  });
 
   // return initial if not modified
   return result.length === array.length ? array : result;

@@ -11,7 +11,9 @@ export default function objectDelete(keys, object) {
 
   // modify
   const result = Object.assign({}, object);
-  keys.forEach(key => delete result[key]);
+  keys.forEach(function(key) {
+    delete result[key];
+  });
 
   // return initial if not modified
   return Object.keys(result).length === Object.keys(object).length ? object : result;

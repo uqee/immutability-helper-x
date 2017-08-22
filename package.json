@@ -1,6 +1,6 @@
 {
   "name": "@uqee/immutability-helper-x",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "index.js",
   "repository": "https://github.com/uqee/immutability-helper-x.git",
   "author": "Denis Zhbankov",

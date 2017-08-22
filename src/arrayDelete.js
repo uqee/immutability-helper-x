@@ -10,7 +10,9 @@ export default function arrayDelete(items, array) {
   if (!array || !Array.isArray(array)) return array;
 
   // modify
-  const result = array.filter(item => !~items.indexOf(item));
+  const result = array.filter(function(item) {
+    return items.indexOf(item) === -1;
+  });
 
   // return initial if not modified
   return result.length === array.length ? array : result;
