@@ -1,6 +1,6 @@
 {
   "name": "@uqee/immutability-helper-x",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "./build/index.min.js",
   "typings": "./build/index.d.ts",
   "repository": "https://github.com/uqee/immutability-helper-x.git",
